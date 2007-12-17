@@ -10,7 +10,6 @@ URL:		http://search.cpan.org/dist/%{real_name}
 Source0:	http://search.cpan.org/CPAN/authors/id/F/FS/FSORIANO/%{real_name}-%{version}.tar.bz2
 BuildRequires:	perl-devel
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The Tree::Nary class implements N-ary trees (trees of data with any 
