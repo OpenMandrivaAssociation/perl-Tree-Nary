@@ -1,16 +1,18 @@
-%define real_name Tree-Nary
+%define upstream_name    Tree-Nary
+%define upstream_version 1.3
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Tree::Nary - Perl implementation of N-ary search trees
-Name:		perl-%{real_name}
-Version:	1.3
-Release:	%mkrel 6
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{real_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/F/FS/FSORIANO/%{real_name}-%{version}.tar.bz2
-BuildRequires:	perl-devel
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/F/FS/FSORIANO/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 The Tree::Nary class implements N-ary trees (trees of data with any 
@@ -32,12 +34,14 @@ implementation of N-ary trees, available in the GLIB distribution (see SEE
 ALSO).
 
 %prep
-%setup -q -n %{real_name}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
-make test
+
+%check
+%make test
 
 %install
 rm -rf %{buildroot}
@@ -51,4 +55,3 @@ rm -rf %{buildroot}
 %doc CHANGES README
 %{perl_vendorlib}/Tree/*.pm
 %{_mandir}/*/*
-
