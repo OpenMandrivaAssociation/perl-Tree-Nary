@@ -1,9 +1,9 @@
 %define upstream_name    Tree-Nary
 %define upstream_version 1.3
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	2
 
 Summary:	Tree::Nary - Perl implementation of N-ary search trees
 License:	GPL+ or Artistic
@@ -11,8 +11,8 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://search.cpan.org/CPAN/authors/id/F/FS/FSORIANO/%{upstream_name}-%{upstream_version}.tar.bz2
 
+BuildRequires:	perl-devel
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 The Tree::Nary class implements N-ary trees (trees of data with any 
@@ -37,21 +37,54 @@ ALSO).
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean 
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc CHANGES README
 %{perl_vendorlib}/Tree/*.pm
 %{_mandir}/*/*
+
+
+%changelog
+* Sat Feb 13 2010 Jérôme Quelin <jquelin@mandriva.org> 1.300.0-1mdv2010.1
++ Revision: 505279
+- rebuild using %%perl_convert_version
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.3-6mdv2010.0
++ Revision: 430609
+- rebuild
+
+* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 1.3-5mdv2009.0
++ Revision: 258705
+- rebuild
+
+* Thu Jul 24 2008 Thierry Vignaud <tv@mandriva.org> 1.3-4mdv2009.0
++ Revision: 246662
+- rebuild
+
+* Tue Feb 12 2008 Thierry Vignaud <tv@mandriva.org> 1.3-2mdv2008.1
++ Revision: 166686
+- fix description-line-too-long
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Sat Sep 15 2007 Guillaume Rousse <guillomovitch@mandriva.org> 1.3-2mdv2008.0
++ Revision: 87062
+- rebuild
+
+
+* Wed Sep 13 2006 Oden Eriksson <oeriksson@mandriva.com> 1.3-1mdv2007.0
+- rebuild
+
+* Fri Jul 15 2005 Oden Eriksson <oeriksson@mandriva.com> 1.3-1mdk
+- initial Mandriva package
+
