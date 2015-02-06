@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	4
 
 Summary:	Tree::Nary - Perl implementation of N-ary search trees
 License:	GPL+ or Artistic
