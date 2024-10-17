@@ -8,7 +8,7 @@ Release:	4
 Summary:	Tree::Nary - Perl implementation of N-ary search trees
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://search.cpan.org/CPAN/authors/id/F/FS/FSORIANO/%{upstream_name}-%{upstream_version}.tar.bz2
 
 BuildRequires:	perl-devel
