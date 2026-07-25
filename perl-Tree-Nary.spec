@@ -2,14 +2,14 @@
 %define upstream_version 1.3
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	5
 
 Summary:	Tree::Nary - Perl implementation of N-ary search trees
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/F/FS/FSORIANO/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/Tree-Nary
+Source0:	https://cpan.metacpan.org/authors/id/F/FS/FSORIANO/Tree-Nary-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
