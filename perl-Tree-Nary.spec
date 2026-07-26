@@ -1,15 +1,13 @@
 %define upstream_name    Tree-Nary
-%define upstream_version 1.3
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	1.3
+Release:	6
 
 Summary:	Tree::Nary - Perl implementation of N-ary search trees
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Tree-Nary
-Source0:	https://cpan.metacpan.org/authors/id/F/FS/FSORIANO/Tree-Nary-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/F/FS/FSORIANO/Tree-Nary-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -35,7 +33,7 @@ implementation of N-ary trees, available in the GLIB distribution (see SEE
 ALSO).
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -56,9 +54,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %changelog
 * Sat Feb 13 2010 Jérôme Quelin <jquelin@mandriva.org> 1.300.0-1mdv2010.1
 + Revision: 505279
-- rebuild using %%perl_convert_version
-
-* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.3-6mdv2010.0
+- rebuild using %1.3 Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.3-6mdv2010.0
 + Revision: 430609
 - rebuild
 
