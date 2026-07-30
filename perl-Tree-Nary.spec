@@ -1,13 +1,14 @@
 %define upstream_name    Tree-Nary
+%define upstream_version 1.3
 Name:		perl-%{upstream_name}
 Version:	1.3
-Release:	6
+Release:	1
 
 Summary:	Tree::Nary - Perl implementation of N-ary search trees
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Tree-Nary
-Source0:	https://cpan.metacpan.org/authors/id/F/FS/FSORIANO/Tree-Nary-%{version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/F/FS/FSORIANO/Tree-Nary-1.3.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -50,38 +51,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 %{perl_vendorlib}/Tree/*.pm
 %{_mandir}/*/*
 
-
-%changelog
-* Sat Feb 13 2010 Jérôme Quelin <jquelin@mandriva.org> 1.300.0-1mdv2010.1
-+ Revision: 505279
-- rebuild using %1.3 Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.3-6mdv2010.0
-+ Revision: 430609
-- rebuild
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 1.3-5mdv2009.0
-+ Revision: 258705
-- rebuild
-
-* Thu Jul 24 2008 Thierry Vignaud <tv@mandriva.org> 1.3-4mdv2009.0
-+ Revision: 246662
-- rebuild
-
-* Tue Feb 12 2008 Thierry Vignaud <tv@mandriva.org> 1.3-2mdv2008.1
-+ Revision: 166686
-- fix description-line-too-long
-- kill re-definition of %%buildroot on Pixel's request
-
-  + Olivier Blin <oblin@mandriva.com>
-    - restore BuildRoot
-
-* Sat Sep 15 2007 Guillaume Rousse <guillomovitch@mandriva.org> 1.3-2mdv2008.0
-+ Revision: 87062
-- rebuild
-
-
-* Wed Sep 13 2006 Oden Eriksson <oeriksson@mandriva.com> 1.3-1mdv2007.0
-- rebuild
-
-* Fri Jul 15 2005 Oden Eriksson <oeriksson@mandriva.com> 1.3-1mdk
-- initial Mandriva package
 
